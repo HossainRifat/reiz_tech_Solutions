@@ -1,0 +1,8 @@
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\bin\Debug\REIZ_TECH_Problem_02.exe.config
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\bin\Debug\REIZ_TECH_Problem_02.exe
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\bin\Debug\REIZ_TECH_Problem_02.pdb
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\obj\Debug\REIZ_TECH_Problem_02.csproj.AssemblyReference.cache
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\obj\Debug\REIZ_TECH_Problem_02.csproj.SuggestedBindingRedirects.cache
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\obj\Debug\REIZ_TECH_Problem_02.csproj.CoreCompileInputs.cache
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\obj\Debug\REIZ_TECH_Problem_02.exe
+E:\1.SCHOOL\COURSE\1. Computer Science\11.19_Advanced Programming With .Net\VS22\REIZ_TECH\REIZ_TECH_Problem_02\obj\Debug\REIZ_TECH_Problem_02.pdb

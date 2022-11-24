@@ -21,8 +21,12 @@ namespace REIZ_TECH_Problem_02
              branch5 branch6 branch7
              /       /     \
         branch8  branch9 branch10
-                    |
-                 branch11
+                    |       \
+                 branch11  branch12
+                              \
+                            branch13
+                                \
+                            branch14
 
         */
 
@@ -32,35 +36,37 @@ namespace REIZ_TECH_Problem_02
 
     public class Program
     {
-        public static int d = 1;
-        public static int depth = 0;
-        
+        public static int depth = 1;
+        public static int maxDepth = 1;
+        public static int goingBack = 0;
+
         public void depthFind(Branch branch)
         {
-           
             
-            if (branch.branches.Count > 0)
+            if (branch.branches.Any())
             {
-                d++;
-                if (d > depth)
+                depth++;
+
+                if (depth > maxDepth)
                 {
-                    depth = d;
-                }
-                foreach (Branch branch2 in branch.branches)
-                {
-                    Console.WriteLine("branch" + branch2.id + "iteration" + d);
-                    depthFind(branch2);
+                    maxDepth = depth;
                 }
                 
-            }
-            else
-            {
-                d--;
-                Console.WriteLine("0");
+                foreach (Branch branch2 in branch.branches)
+                {
+                    Console.WriteLine("Branch- " + branch2.id + ", Depth- " + depth);
+                    depthFind(branch2);
+                }
+                goingBack++;
+                //Console.WriteLine("More Tana- " + moreTana);
+
             }
 
-            
-            
+            depth = Math.Abs(depth - goingBack);
+            //Console.WriteLine("d = " + (d) + " moretana = " + (moreTana) + " difference= " + Math.Abs(d - moreTana));
+            goingBack = 0;
+            //Console.WriteLine();
+
         }
 
         static void Main(string[] args)
@@ -109,6 +115,18 @@ namespace REIZ_TECH_Problem_02
             branch11.branches = new List<Branch>();
             branch11.id = 11;
 
+            Branch branch12 = new Branch();
+            branch12.branches = new List<Branch>();
+            branch12.id = 12;
+
+            Branch branch13 = new Branch();
+            branch13.branches = new List<Branch>();
+            branch13.id = 13;
+
+            Branch branch14 = new Branch();
+            branch14.branches = new List<Branch>();
+            branch14.id = 14;
+
             branch1.branches.Add(branch2);
             branch1.branches.Add(branch3);
             branch2.branches.Add(branch4);
@@ -122,36 +140,32 @@ namespace REIZ_TECH_Problem_02
             branch6.branches.Add(branch9);
             branch6.branches.Add(branch10);
             branch9.branches.Add(branch11);
-            
 
-            int i = 1;
+            branch10.branches.Add(branch12);
+            branch12.branches.Add(branch13);
+            branch13.branches.Add(branch14);
+
+            
 
             Console.WriteLine("Branch1");
             foreach (Branch br in branch1.branches)
             {
-                i++;
                 Console.WriteLine("|_Branch" + br.id);
                 if (br.branches.Count > 0)
                 {
-                    int j = 0;
                     foreach (Branch br2 in br.branches)
                     {
-                        j++;
                         Console.WriteLine("   |_branch" + br2.id);
 
                         if (br2.branches.Count > 0)
                         {
-                            int k = 0;
                             foreach (Branch br3 in br2.branches)
                             {
-                                k++;
                                 Console.WriteLine("         |_branch" + br3.id);
                                 if (br3.branches.Count > 0)
                                 {
-                                    int l = 0;
                                     foreach (Branch br4 in br3.branches)
                                     {
-                                        l++;
                                         Console.WriteLine("               |_branch" + br4.id);
                                     }
                                 }
@@ -162,12 +176,13 @@ namespace REIZ_TECH_Problem_02
                 }
             }
 
+            Console.WriteLine();
 
             Program P = new Program();
 
             P.depthFind(branch1);
 
-            Console.WriteLine("depth of the tree is: " + depth);
+            Console.WriteLine("\nMax depth of the tree is: " + maxDepth);
 
             Console.ReadLine();
         }

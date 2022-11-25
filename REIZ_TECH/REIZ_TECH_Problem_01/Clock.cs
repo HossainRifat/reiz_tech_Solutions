@@ -29,18 +29,18 @@ namespace REIZ_TECH_Problem_01
                 int hour = Int32.Parse(times[0]);
                 int minute = Int32.Parse(times[1]);
 
-                if (times.Length == 2 && (hour >= 1 || hour <= 12) && (minute >= 0 || minute <= 60))
+                if (times.Length == 2 && (hour >= 1 && hour <= 12) && (minute >= 0 && minute <= 60))
                 {
                     double hourHand = (30 * hour) + (0.5 * minute);
-                    if (hourHand >= 360)
+                    if(hourHand >= 360)
                     {
-                        hourHand = 360 - hourHand;
+                        hourHand = hourHand - 360;
                     }
 
                     double minuteHand = (6 * minute);
-                    if (minuteHand == 360)
+                    if (minuteHand >= 360)
                     {
-                        minuteHand = 0;
+                        minuteHand = minuteHand - 360;
                     }
 
                     double difference = Math.Abs(hourHand - minuteHand);
@@ -50,9 +50,9 @@ namespace REIZ_TECH_Problem_01
                         difference = 360 - difference;
                     }
 
-                    Console.WriteLine(hourHand + " and " + minuteHand);
+                    Console.WriteLine("Angle of hour hand = " + hourHand + "° and minute hand = " + minuteHand + "°\n");
 
-                    Console.WriteLine("Difference between hour and minute hand is: " + difference + "°");
+                    Console.WriteLine("Difference between hour and minute hand is: " + difference + "°\n");
 
 
                 }
